@@ -1,0 +1,48 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+option csharp_namespace = "gRPCPremiumCalculator";
+
+package premium;
+
+// The greeting service definition.
+service PremiumRolCRUD {
+  // Sends a the list of period
+  rpc PremiumList (PremiumQ) returns (PremiumRols);
+}
+
+// The request message with no parameters
+message EmptyPremiumRolParam {
+
+}
+
+
+message PremiumQ{
+    google.protobuf.Timestamp DoB = 1;
+    string State = 2;
+    int32 Age = 3;
+    string Plan = 4; 
+    
+}
+
+
+// The response message containing the Period.
+message PremiumRol {
+        int32 PremiumRolID = 1;
+        string Carrier =2;
+        string Plan =3;
+        string State =4;
+        string MonthOfBirth =5;
+        string Age =6;
+        double Premium =7;
+}
+
+message PremiumRolResult{
+        string carrier =1;
+        double premium =2;
+}
+
+
+
+message PremiumRols{
+    repeated PremiumRolResult items = 1;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCPremiumCalculator";
+
+package premium;
+
+// The greeting service definition.
+service PeriodCRUD {
+  // Sends a the list of period
+  rpc PeriodList (Empty) returns (Periods);
+}
+
+// The request message with no parameters
+message Empty {
+
+}
+// The response message containing the Period.
+message Period {
+        string IdPeriod = 1;
+        string NamePeriod =2;
+        int32 Factor =3;
+}
+
+message Periods{
+    repeated Period items = 1;
+}

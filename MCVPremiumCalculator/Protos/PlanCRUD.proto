@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCPremiumCalculator";
+
+package premium;
+
+// The greeting service definition.
+service PlanCRUD {
+  // Sends a the list of period
+  rpc PlanList (EmptyPlanParam) returns (Plans);
+}
+
+// The request message with no parameters
+message EmptyPlanParam {
+
+}
+// The response message containing the Period.
+message Plan {
+        string PlanId = 1;
+        string PlanName = 2;
+        
+}
+
+message Plans{
+    repeated Plan items = 1;
+}

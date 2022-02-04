@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCPremiumCalculator";
+
+package premium;
+
+// The greeting service definition.
+service StateCRUD {
+  // Sends a the list of period
+  rpc StateList (EmptyStateParam) returns (States);
+}
+
+// The request message with no parameters
+message EmptyStateParam {
+
+}
+// The response message containing the Period.
+message State {
+        string StateId = 1;
+        string StateName =2;
+}
+
+message States{
+    repeated State items = 1;
+}
