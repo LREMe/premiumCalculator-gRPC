@@ -65,10 +65,10 @@ function getPremium(strUrl) {
     var parts = dateStr.split("/");
 
     var obj = {
-        doB: parts[2] + "-" + parts[0] + "-" + parts[1] + "T00:00:00.000Z",
-        state: stateStr,
-        age: $("#Age").val(),
-        plan: planStr
+        DoB: parts[2] + "-" + parts[0] + "-" + parts[1] + "T00:00:00.000Z",
+        State: stateStr,
+        Age: $("#Age").val(),
+        Plan: planStr
     };
 
     var json = JSON.stringify(obj);
@@ -77,13 +77,15 @@ function getPremium(strUrl) {
     $.ajax({
         
        // url: 'https://localhost:44346/Premium',
-        url: strUrl + 'Premium',
-        type: 'put',
-        data: json,
-        cache: 'true',
+        //strUrl +
+        //url: '/api/Premium/',
+        url: strUrl,
+        type: 'post',
+        data:  obj  ,
+        //cache: 'true',
         dataType: 'json',
-        async: true,
-        contentType: "application/json; charset=utf-8",
+        //async: true,
+        //contentType: "application/json; charset=utf-8",
         success: function (json, status, jqXHR) {
             $('#SelectedPeriod').prop('disabled', !(json.length > 0));
             $("#SelectedPeriod option").prop("selected", false).trigger("chosen:updated");

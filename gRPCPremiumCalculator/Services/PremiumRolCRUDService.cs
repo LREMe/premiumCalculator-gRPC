@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using Data = gRPCPremiumCalculator.Data;
-    public class PremiumRolCRUDService:PremiumRolCRUD.PremiumRolCRUDBase
+    public class PremiumRolCRUDService : PremiumRolCRUD.PremiumRolCRUDBase
     {
         private Data.PremiumRolDbContext db = null;
         private readonly ILogger<PremiumRolCRUDService> _logger;
@@ -23,7 +23,7 @@
             string month = "";
             var today = DateTime.Today;
             // Calculate the age.
-            
+
             var age = today.Year - request.DoB.ToDateTime().Year;
             //not the same agen
             if (age != request.Age)

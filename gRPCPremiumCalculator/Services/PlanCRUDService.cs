@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
     using Data = gRPCPremiumCalculator.Data;
 
-    public class PlanCRUDService: PlanCRUD.PlanCRUDBase 
+    public class PlanCRUDService : PlanCRUD.PlanCRUDBase
     {
 
         private Data.PremiumRolDbContext db = null;

@@ -4,12 +4,13 @@
     using System.Threading.Tasks;
     using Data = gRPCPremiumCalculator.Data;
 
-    public class PeriodCRUDService: PeriodCRUD.PeriodCRUDBase
+    public class PeriodCRUDService : PeriodCRUD.PeriodCRUDBase
     {
 
         private Data.PremiumRolDbContext db = null;
 
-        public PeriodCRUDService(Data.PremiumRolDbContext db) {
+        public PeriodCRUDService(Data.PremiumRolDbContext db)
+        {
             this.db = db;
         }
 

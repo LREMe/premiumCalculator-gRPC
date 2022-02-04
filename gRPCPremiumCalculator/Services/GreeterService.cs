@@ -1,5 +1,4 @@
 using Grpc.Core;
-using gRPCPremiumCalculator;
 
 namespace gRPCPremiumCalculator.Services
 {
